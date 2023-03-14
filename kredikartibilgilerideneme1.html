@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kredi Kartı</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="odemeformu">
+        <div class="kart_numarası" id="kart_alanı">
+            <input type="text" id="no" class="input" placeholder="Kart Numarası" >
+        </div>
+            <div class="kartgrup">
+            <div class="sonkullanmatarihi" >
+                <input type="text" id="tarih" class="sonkullanmatarihinput" placeholder="00" data-inputmask="'mask': '99/99'">
+            </div>
+            <div class="cvv">
+            <input type="text" class="cvvinput" id="cvv" minlength="3" placeholder="000"></div>
+            <div class="cvv-img">?
+                <div class="img"  >
+                <img src="cvvv.jpg" alt="cvv">
+            </div>
+</div>
+            
+        </div>
+      <button class="button" onclick="gonder()">Bilgilerimi Kaydet
+
+
+      </button>
+    </div>
+    <a href="file:///C:/Users/Imece/Desktop/Yeni%20klasör/faturalar.html" link="black" alink="green" vlink="red">Şimdi Değil</a>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/inputmask.js" integrity="sha512-CVqQvoiMyyvt5sAf1I+3xo/3s+qPaClc2hSZRGQJQqL0fefL18RmqSCDgqMXSIKhwzwb4xo1+OXmcgWs6rdxIg==" crossorigin="anonymous"></script>   
+
+<script>
+var im = new Inputmask("9999-9999-9999-9999");
+ im.mask(document.getElementById("no"));
+ var it = new Inputmask("99/99");
+ it.mask(document.getElementById("tarih"));
+ var cv1 = new Inputmask("999");
+ cv1.mask(document.getElementById("cvv"));
+ 
+ function gonder(){
+     window.location.href="filmsepeti.html";
+    
+      }
+</script>
+</body>
+</html>

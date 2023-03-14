@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAYIT OL</title>
+    <style>
+   body{
+       background-color: white;
+   }
+   
+        .renk{
+            color: red;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+   
+ Kullanıcı Adı:  <input type="text" id="kullaniciadi" placeholder="Kullanıcı Adı"><br>
+   Şifre: <input type="password" id="sifre" placeholder="Şifre"><br>
+   Şifre Tekrar: <input type="password" id="sifretekrar" placeholder="Şifre Tekrar"><br>
+    <button onclick="kontrol()">Kayıt Ol</button>
+    <p class="result" id="result"></p>
+
+    <script>
+      //  alert("Siteye Kaydolmanız Gerekiyor");
+        function kontrol(){
+            var ad,sifre,sifretekrar;
+             ad=document.getElementById("kullaniciadi").value;
+    let text=null;
+             sifre=document.getElementById("sifre").value;
+             sifretekrar=document.getElementById("sifretekrar").value;
+             if(ad.length==0 || sifre.length==0){
+                 text="Kullanıcı Adı ve Şifre Alanı Boş Bırakılamaz.";
+             }
+             else if(sifre.length<8){
+                 text="Şifre En Az Sekiz Karakterden Oluşmalıdır."
+             }
+             else if(sifre!=sifretekrar){
+                 text="Şifreler Aynı Değil.";
+             }
+             else if(ad.length<3 || ad.length>20){
+                 text="Kullanıcı Adı 3-20 Karakter Arası Olmalı";
+
+             }else{
+             text="Kayıt Başarılı , Diğer Sayfaya Yönlendiriliyorsunuz...";
+           
+             }
+            document.getElementById('result').innerHTML=text;
+            window.location.href='resimyeri.html'
+        } 
+       
+    </script>
+    
+</body>
+</html>

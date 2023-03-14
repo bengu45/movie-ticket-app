@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parazit</title>
+    <style>
+          .yuvarlak {
+            width: 50px;
+            height: 50px;
+            left: 2%;
+            background-color: rgb(75, 72, 72);
+           margin: 5%;
+            border-radius: 50px;
+            position: relative;
+        }
+
+        .yazi {
+            position: absolute;
+            width: inherit;
+            height: auto;
+            top: 3%;
+            transform: translate(-5%);
+            text-align: center;
+            font-family: Arial;
+            color: #fff;
+
+        }
+
+        body{
+            background-color: black;
+        }
+        .sinifim img { width: 400px; height:500px; }
+        .solakaydır{ float:left;padding:0 10px 10px 0; }
+        
+
+
+    </style>
+</head>
+<body>
+   
+    <div class="sinifim"  ><img src="parazit-t.jpg" title="Parazit" class="solakaydır" >
+        <p style="font-size: 20px; color: white;"  > <b>Türkçe Dublaj</b><br>
+            Vizyon Tarihi: 01.11.2019<br>
+            Süre: 132 Dakika<br>
+            Tür: Dram<br>
+            Özet : Sinemaseverlerin Okja ve Kar Küreyici’yle tanıdığı Bong Joon-ho’nun<br>
+             gençliğinde para kazanmak için ders verdiği zengin evinden ilhamla çektiği Parazit<br>
+              bu yıl Cannes’da Altın Palmiye’yi alan ilk Kore filmi oldu. Kim ailesinin işsiz ama becerikli <br>
+              fertleri zengin Park ailesinin evine hile ve desiseyle teker teker İngilizce öğretmeni, <br>
+              resim öğretmeni ve hizmetçi olarak sızarlar, fakat belgede sahtecilikte ne kadar maharetli <br>
+              olurlarsa olsunlar, saklayamadıkları bir şeyler vardır. Sınıf farkı yaralarını büyük ustalıkla <br>
+              işleyen yönetmen filmi için,<br>
+             “palyaçosuz bir komedi, kötü adamsız bir dram” diyor.</p>
+    </div>
+    <div class="yuvarlak">
+        <div class="yazi">
+            <h3>16+</h3>
+        </div>
+    </div>
+    <button onclick="biletAl()" style="background-color: black; color: white;">Bilet Al</button> <button onclick="fragman()"  style="background-color: black; color: white;">Fragman</button>
+    <script>
+        function biletAl(){
+            window.location.href='sinemasistemi.html'
+        }
+        function fragman(){
+            window.location='https://www.youtube.com/watch?v=Xey1oYCWbV4';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOLTUK REZERVASYON</title>
+    <style>
+        .yuvarlak{
+            width: 50px;
+       height: 50px;
+       background-color:rgb(197, 0, 99) ;   
+        border-radius: 50px;
+        position: relative;
+        }
+        .yazi{
+            position: absolute;
+            width: inherit;
+            height: auto;
+            top: 3%;
+            transform: translate(-5%);
+            text-align: center;
+            font-family: Arial;
+            color: #fff;
+            
+        }
+        .yuvarlakk{
+            width: 50px;
+       height: 50px;
+       background-color:hotpink ;   
+        border-radius: 50px;
+        position: relative;
+        }
+        .yazii{
+            position: absolute;
+            width: inherit;
+            height: auto;
+            top: 3%;
+            transform: translate(-5%);
+            text-align: center;
+            font-family: Arial;
+            color: #fff;
+            margin-bottom: 50px;
+            
+        }
+        .renk {
+            background: rgb(197, 0, 99);
+        }
+
+        .yazirengi {
+            color: white;
+        }
+
+        td {
+            border: 1px #DDD solid;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+       
+
+        body {
+            background-color: black;
+        }
+
+        .sayfa {
+            width: 360px;
+
+        }
+
+        table {
+            background: rgb(197, 0, 99);
+        }
+
+        table .buton {
+            width: 50px;
+            background: hotpink;
+            text-align: center;
+            line-height: 60px;
+            font-size: 1.5em;
+        }
+
+        .renk {
+            color: black;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+
+
+
+
+
+
+    <div class="sayfa" id="hey">
+        <table>
+
+            <tr>
+                <td colspan="5" id="goster"></td>
+            </tr>
+
+        </table>
+
+    </div>
+    <div id="sonuc" class="yazirengi"></div>
+    <table id="koltuklar" class="renk"></table><br>
+    <button  onclick="satinAl()" style="background-color: hotpink; width: 10%;">Al</button>
+     <div class="yuvarlak">
+         <div class="yazi">
+         <h4>Dolu</h4>
+        </div>
+     </div>
+     <div class="yuvarlakk">
+        <div class="yazii">
+        <h4>Boş</h4>
+       </div>
+    </div>
+    
+    <script>
+
+        var koltuklar = [
+            [
+                {
+                    text: 'A1',
+                    price: 15,
+                    rezerve: false
+                },
+                {
+                    text: 'A2',
+                    price: 15,
+                   rezerve:true
+                },
+                {
+                    text: 'A3',
+                    price: 15
+                },
+                {
+                    text: 'A4',
+                    price: 15
+                }
+            ],
+            [
+                {
+                    text: 'B1',
+                    price: 30
+                },
+                {
+                    text: 'B2',
+                     price: 30
+                },
+                {
+                    text: 'B3' ,
+                    price: 30
+                },
+                {
+                    text: 'B4',
+                    price: 30
+                }
+            ],
+            [
+                {
+                    text: 'C1',
+                    price: 50
+                },
+                {
+                    text: 'C2',
+                    price: 50
+                },
+                {
+                    text: 'C3',
+                    price: 50
+                },
+                {
+                    text: 'C4',
+                    price: 50
+                }
+            ]
+        ];
+    
+        console.log(koltuklar);
+
+        koltuklar.forEach((i, k) => {
+            console.log("tr");
+            var tr = document.createElement("tr");
+            i.forEach(j => {
+                var td = document.createElement("td");
+                td.innerText = j.text;
+                if (!j.rezerve) {
+                    td.classList.add('buton');
+                    td.classList.add('butonKoltuk');
+                }
+
+                td.setAttribute("data-price", j.price);
+                tr.appendChild(td);
+            })
+            document.getElementById("koltuklar").appendChild(tr);
+        });
+        var butonKoltuk = document.querySelectorAll(".butonKoltuk");
+        var Goster = document.querySelector("#goster")
+        var sepet = 0;
+
+        butonKoltuk.forEach(function (element) {
+          
+          
+
+            var table = document.getElementById("koltuklar"), rIndex, cIndex;
+if (table != null) {
+    for (var i = 0; i < table.rows.length; i++) {
+        for (var j = 0; j < table.rows[i].cells.length; j++) {
+            table.rows[i].cells[j].onclick = function () {
+
+                { goster.textContent += (" " + this.textContent);
+                var ne = parseInt(element.getAttribute("data-price"));
+                var toplam = 0;
+                sepet += ne;
+                toplam = sepet;
+                document.getElementById("sonuc").innerHTML = toplam + "₺";
+               } {getval(this); };
+            }
+        }
+    }
+}
+function getval(cel) {
+
+    cel.style.backgroundColor = "rgb(197, 0, 99)";
+  
+//return butonKoltuk;
+}
+      
+         });   
+          function satinAl(){
+              window.location.href='kredikartibilgilerideneme1.html';
+          }
+         
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
